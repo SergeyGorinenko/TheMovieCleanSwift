@@ -16,6 +16,8 @@
 		15EEB00129E7AEB7005A6A91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15EEAFFC29E7AEB7005A6A91 /* Assets.xcassets */; };
 		15EEB00229E7AEB7005A6A91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15EEAFFD29E7AEB7005A6A91 /* LaunchScreen.storyboard */; };
 		15EEB00329E7AEB7005A6A91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15EEAFFF29E7AEB7005A6A91 /* Main.storyboard */; };
+		15EEB00A29E7B33F005A6A91 /* Basement in Frameworks */ = {isa = PBXBuildFile; productRef = 15EEB00929E7B33F005A6A91 /* Basement */; };
+		15EEB00C29E7B33F005A6A91 /* RootNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 15EEB00B29E7B33F005A6A91 /* RootNavigation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		15EEAFFC29E7AEB7005A6A91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15EEAFFE29E7AEB7005A6A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15EEB00029E7AEB7005A6A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		15EEB00629E7B1AE005A6A91 /* Basement */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Basement; sourceTree = "<group>"; };
+		15EEB00729E7B263005A6A91 /* RootNavigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RootNavigation; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15EEB00C29E7B33F005A6A91 /* RootNavigation in Frameworks */,
+				15EEB00A29E7B33F005A6A91 /* Basement in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +88,9 @@
 				15EEAFC129E79F28005A6A91 /* TheMovieCleanSwift */,
 				15EEAFD829E79F29005A6A91 /* TheMovieCleanSwiftTests */,
 				15EEAFE229E79F29005A6A91 /* TheMovieCleanSwiftUITests */,
+				15EEB00529E7B190005A6A91 /* Modules */,
 				15EEAFC029E79F28005A6A91 /* Products */,
+				15EEB00829E7B33F005A6A91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +167,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		15EEB00529E7B190005A6A91 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				15EEB00729E7B263005A6A91 /* RootNavigation */,
+				15EEB00629E7B1AE005A6A91 /* Basement */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		15EEB00829E7B33F005A6A91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,6 +199,10 @@
 			dependencies = (
 			);
 			name = TheMovieCleanSwift;
+			packageProductDependencies = (
+				15EEB00929E7B33F005A6A91 /* Basement */,
+				15EEB00B29E7B33F005A6A91 /* RootNavigation */,
+			);
 			productName = TheMovieCleanSwift;
 			productReference = 15EEAFBF29E79F28005A6A91 /* TheMovieCleanSwift.app */;
 			productType = "com.apple.product-type.application";
@@ -398,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -452,7 +480,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -477,6 +505,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,6 +534,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -634,6 +664,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		15EEB00929E7B33F005A6A91 /* Basement */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Basement;
+		};
+		15EEB00B29E7B33F005A6A91 /* RootNavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RootNavigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 15EEAFB729E79F28005A6A91 /* Project object */;
 }
