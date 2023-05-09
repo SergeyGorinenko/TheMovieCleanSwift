@@ -5,6 +5,7 @@
 //  Created by Serhii Horinenko on 12.04.2023.
 //
 
+import Combine
 import Basement
 
 // MARK: - View Protocol
@@ -23,6 +24,8 @@ protocol MovieListViewDelegate {
 // MARK: - Interactor Protocol
 
 protocol MovieListInteractorProtocol {
+    func loadFirstPage(completion: @escaping ((Result<Bool, Error>) -> Void))
+    func loadNextPage(completion: @escaping ((Result<Bool, Error>) -> Void))
 }
 
 

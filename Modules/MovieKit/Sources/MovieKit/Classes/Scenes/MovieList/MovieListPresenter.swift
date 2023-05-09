@@ -27,6 +27,10 @@ class MovieListPresenter {
 extension MovieListPresenter: MovieListViewDelegate {
 
     func configureView() {
+        view?.showLoading()
+        interactor.loadFirstPage { [weak self] (result) in
+            self?.view?.hideLoading()
+        }
     }
     
 }
