@@ -53,6 +53,10 @@
 		15EEB00029E7AEB7005A6A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15EEB00629E7B1AE005A6A91 /* Basement */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Basement; sourceTree = "<group>"; };
 		15EEB00729E7B263005A6A91 /* RootNavigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RootNavigation; sourceTree = "<group>"; };
+		15EEB00E29E7B6EE005A6A91 /* Global.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Global.xcconfig; sourceTree = "<group>"; };
+		15EEB00F29E7B6EE005A6A91 /* Global-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Global-Debug.xcconfig"; sourceTree = "<group>"; };
+		15EEB01029E7B6EE005A6A91 /* Global-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Global-Release.xcconfig"; sourceTree = "<group>"; };
+		15EEB01129E7BAE7005A6A91 /* MovieKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MovieKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 		15EEAFB629E79F28005A6A91 = {
 			isa = PBXGroup;
 			children = (
+				15EEB00D29E7B6EE005A6A91 /* Configuration */,
 				15EEAFC129E79F28005A6A91 /* TheMovieCleanSwift */,
 				15EEAFD829E79F29005A6A91 /* TheMovieCleanSwiftTests */,
 				15EEAFE229E79F29005A6A91 /* TheMovieCleanSwiftUITests */,
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				15EEB00729E7B263005A6A91 /* RootNavigation */,
+				15EEB01129E7BAE7005A6A91 /* MovieKit */,
 				15EEB00629E7B1AE005A6A91 /* Basement */,
 			);
 			path = Modules;
@@ -181,6 +187,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		15EEB00D29E7B6EE005A6A91 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				15EEB01029E7B6EE005A6A91 /* Global-Release.xcconfig */,
+				15EEB00F29E7B6EE005A6A91 /* Global-Debug.xcconfig */,
+				15EEB00E29E7B6EE005A6A91 /* Global.xcconfig */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +394,7 @@
 /* Begin XCBuildConfiguration section */
 		15EEAFE729E79F29005A6A91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15EEB00F29E7B6EE005A6A91 /* Global-Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -438,6 +455,7 @@
 		};
 		15EEAFE829E79F29005A6A91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15EEB01029E7B6EE005A6A91 /* Global-Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

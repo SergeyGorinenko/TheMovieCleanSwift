@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rnSplashLogo" translatesAutoresizingMaskIntoConstraints="NO" id="itC-iU-mK9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tmSplashLogo" translatesAutoresizingMaskIntoConstraints="NO" id="itC-iU-mK9">
                                 <rect key="frame" x="73.333333333333329" y="359.66666666666669" width="246.33333333333337" height="133"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="StH-D5-hjr">
@@ -41,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="rnSplashLogo" width="185" height="133"/>
+        <image name="tmSplashLogo" width="185" height="133"/>
     </resources>
 </document>

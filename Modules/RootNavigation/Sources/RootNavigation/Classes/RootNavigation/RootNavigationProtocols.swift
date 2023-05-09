@@ -29,4 +29,5 @@ protocol RootNavigationInteractorProtocol {
 // MARK: - Router Protocol
 
 protocol RootNavigationRouterProtocol: ViperRouterProtocol {
+    func presentMovies(animated: Bool, completion: @escaping ((Result<Any, Error>) -> Void))
 }

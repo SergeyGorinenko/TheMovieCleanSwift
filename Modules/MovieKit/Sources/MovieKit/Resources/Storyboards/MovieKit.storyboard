@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movie List View Controller-->
+        <scene sceneID="m8J-V9-38R">
+            <objects>
+                <viewController storyboardIdentifier="movieListStoryboardIdentifier" id="Cuo-rP-UgK" customClass="MovieListViewController" customModule="MovieKit" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="liL-gj-clN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9bM-0r-NqS"/>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="X9W-Tm-xqo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sIo-Wc-HnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-538" y="-495"/>
+        </scene>
+    </scenes>
+</document>
