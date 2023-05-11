@@ -33,4 +33,8 @@ class MovieListViewController: LoadingViewController {
 // MARK: - MovieListViewProtocol
 
 extension MovieListViewController: MovieListViewProtocol {
+    
+    func reloadData() {
+    }
+
 }

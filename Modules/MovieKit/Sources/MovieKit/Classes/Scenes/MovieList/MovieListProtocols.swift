@@ -5,11 +5,14 @@
 //  Created by Serhii Horinenko on 12.04.2023.
 //
 
+import Combine
 import Basement
+import TheMovieAPI
 
 // MARK: - View Protocol
 
 protocol MovieListViewProtocol: LoadingViewControllerProtocol {
+    func reloadData()
 }
 
 
@@ -23,6 +26,8 @@ protocol MovieListViewDelegate {
 // MARK: - Interactor Protocol
 
 protocol MovieListInteractorProtocol {
+    func loadFirstPage() async -> Result<[TheMovieResult], Error>
+    func loadNextPage() async -> Result<[TheMovieResult], Error>
 }
 
 
