@@ -42,6 +42,9 @@ class MovieListPresenter {
         cell.title = movie.title
         cell.release = movie.releaseDate
         cell.rating = movie.voteAverage
+        if let url = URL(string: movie.posterPath ?? "") {
+            cell.setImageWith(url: url, placeholderImage: nil)
+        }
     }
 
     private func applySnaphot(movies: [Movie]) {

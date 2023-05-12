@@ -33,6 +33,9 @@ class MovieListCell: ImageLoadingCell {
 
         _entityId = ""
         titleLabel.text = nil
+        releaseLabel.text = nil
+        ratingLabel.text = nil
+        progressView.progress = 0
         _clickBlock = nil
     }
 
