@@ -12,6 +12,8 @@ class MovieListViewController: LoadingViewController {
 
     // MARK: - IBOutlet properties
 
+    @IBOutlet private weak var _collectionView: UICollectionView!
+
     // MARK: - Public properties
 
     var presenter: MovieListViewDelegate!
@@ -22,6 +24,8 @@ class MovieListViewController: LoadingViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        _collectionView.collectionViewLayout = MovieListLayout.layout()
+
         presenter.configureView()
     }
             
@@ -30,10 +34,25 @@ class MovieListViewController: LoadingViewController {
 }
 
 
+// MARK: - UICollectionViewDelegate
+
+extension MovieListViewController: UICollectionViewDelegate {
+    
+    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
+    
+}
+
+
 // MARK: - MovieListViewProtocol
 
 extension MovieListViewController: MovieListViewProtocol {
-    
+
+    var collectionView: UICollectionView {
+        _collectionView
+    }
+
     func reloadData() {
     }
 

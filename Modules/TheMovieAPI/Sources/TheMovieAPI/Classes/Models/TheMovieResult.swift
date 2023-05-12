@@ -8,18 +8,18 @@
 // MARK: - TheMovieResult
 
 public struct TheMovieResult: Codable {
-    public var popularity: Double
-    public var vote_average: Double
-    public var release_date: String
-    public var backdrop_path: String
-    public var poster_path: String
-    public var original_language: String
-    public var adult: Bool
-    public var id: UInt
-    public var original_title: String
-    public var title: String
-    public var genre_ids: [UInt]
-    public var vote_count: UInt
-    public var video: Bool
-    public var overview: String
+    public let popularity: Double
+    public let vote_average: Double
+    public let release_date: String
+    public let backdrop_path: String
+    public let poster_path: String
+    public let original_language: String
+    public let adult: Bool
+    public let id: UInt
+    public let original_title: String
+    public let title: String
+    public let genre_ids: [UInt]
+    public let vote_count: UInt
+    public let video: Bool
+    public let overview: String
 }

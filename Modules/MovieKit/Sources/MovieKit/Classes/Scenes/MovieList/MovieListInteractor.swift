@@ -14,10 +14,9 @@ class MovieListInteractor {
     
     // MARK: - Public properties
 
-    var movies = [TheMovieResult]()
-
     // MARK: - Private properties
 
+    private var moviesStore = [Movie]()
     private var totalPages = UInt(0)
     private var totalMovies = UInt(0)
     private var currPage = UInt(1)
@@ -27,14 +26,16 @@ class MovieListInteractor {
     // MARK: - Private methods
 
     @MainActor
-    private func loadPage(_ number: UInt) async -> Result<[TheMovieResult], Error> {
+    private func loadPage(_ number: UInt) async -> Result<[Movie], Error> {
         print("")
         do {
             let response = try await TheMovieAPI.getTopRatedMovies(page: number)
             totalPages = response.total_pages
             totalMovies = response.total_results
             currPage = response.page
-            return .success(response.results)
+            let movies = response.results.map({ Movie.movie($0) })
+            self.moviesStore += movies
+            return .success(movies)
         } catch {
             return .failure(error)
         }
@@ -46,12 +47,16 @@ class MovieListInteractor {
 // MARK: - MovieListInteractorProtocol
 
 extension MovieListInteractor: MovieListInteractorProtocol {
-    
-    func loadFirstPage() async -> Result<[TheMovieResult], Error> {
+
+    var movies: [Movie] {
+        moviesStore
+    }
+
+    func loadFirstPage() async -> Result<[Movie], Error> {
         return await loadPage(1)
     }
 
-    func loadNextPage() async -> Result<[TheMovieResult], Error> {
+    func loadNextPage() async -> Result<[Movie], Error> {
         let nextPage = (currPage < totalPages) ? (currPage + 1) : totalPages
         return await loadPage(nextPage)
     }
