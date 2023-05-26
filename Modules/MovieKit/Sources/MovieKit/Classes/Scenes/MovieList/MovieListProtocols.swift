@@ -43,9 +43,6 @@ protocol MovieListRouterProtocol: ViperRouterProtocol {
 // MARK: - MovieListCellProtocol
 
 protocol MovieListCellProtocol: ImageLoadingCellProtocol {
-    var entityId: String { get set }
-    var title: String? { get set }
-    var release: String? { get set }
-    var rating: Double? { get set }
-    var clickBlock: ((String) -> Void)? { get set }
+    var clickBlock: ((UInt) -> Void)? { get set }
+    func update(with movie: Movie, loader: ImageLoaderProtocol)
 }

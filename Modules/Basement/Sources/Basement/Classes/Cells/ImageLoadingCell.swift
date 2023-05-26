@@ -6,13 +6,12 @@
 //
 
 import UIKit
-import SDWebImage
 
 // MARK: - ImageLoadingCellProtocol
 
 public protocol ImageLoadingCellProtocol: AnyObject {
-    var image: UIImage? { get set }
-    func setImageWith(url: URL?, placeholderImage: UIImage?)
+    func showLoading()
+    func hideLoading()
 }
 
 
@@ -33,23 +32,21 @@ open class ImageLoadingCell: UICollectionViewCell {
     // MARK: - Private properties
 
     private var activityView: ActivitySpinnerView?
-    private var _imageURL: URL?
     
     // MARK: - Public methods
 
     open override func awakeFromNib() {
         super.awakeFromNib()
         addActivityViewIfNeeded()
-        hideActivityView(animated: false)
+        hideLoading()
     }
     
     open override func prepareForReuse() {
         super.prepareForReuse()
 
         addActivityViewIfNeeded()
-        hideActivityView(animated: false)
+        hideLoading()
         imageView.image = nil
-        _imageURL = nil
     }
 
     // MARK: - Private methods
@@ -68,16 +65,6 @@ open class ImageLoadingCell: UICollectionViewCell {
             activityView = resultSpinner
         }
     }
-    
-    private func showActivityView(animated: Bool) {
-        activityView?.startAnimating()
-        activityView?.alpha = 1
-    }
-
-    private func hideActivityView(animated: Bool) {
-        activityView?.alpha = 0
-        activityView?.stopAnimating()
-    }
 
 }
 
@@ -86,21 +73,14 @@ open class ImageLoadingCell: UICollectionViewCell {
 
 extension ImageLoadingCell: ImageLoadingCellProtocol {
 
-    public var image: UIImage? {
-        get {
-            return imageView.image
-        }
-        set {
-            imageView.sd_cancelCurrentImageLoad()
-            imageView.image = newValue
-        }
+    public func showLoading() {
+        activityView?.startAnimating()
+        activityView?.alpha = 1
     }
-    
-    public func setImageWith(url: URL?, placeholderImage: UIImage?) {
-        showActivityView(animated: true)
-        imageView?.sd_setImage(with: url, placeholderImage: placeholderImage,completed: { [weak self] (image, error, cache, url) in
-            self?.hideActivityView(animated: true)
-        })
+
+    public func hideLoading() {
+        activityView?.alpha = 0
+        activityView?.stopAnimating()
     }
 
 }

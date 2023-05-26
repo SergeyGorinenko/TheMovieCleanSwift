@@ -38,13 +38,7 @@ class MovieListPresenter {
     }
 
     private func configure(cell: MovieListCell, with indexPath: IndexPath, movie: Movie) {
-        cell.entityId = "\(movie.id)"
-        cell.title = movie.title
-        cell.release = movie.releaseDate
-        cell.rating = movie.voteAverage
-        if let url = URL(string: movie.posterPath ?? "") {
-            cell.setImageWith(url: url, placeholderImage: nil)
-        }
+        cell.update(with: movie, loader: ImageLoader())
     }
 
     private func applySnaphot(movies: [Movie]) {

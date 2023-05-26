@@ -61,6 +61,7 @@ open class ActivitySpinnerView: UIView {
     
     private func addActivityView() {
         let resultIndicator = UIActivityIndicatorView(style: .medium)
+        resultIndicator.color = UIColor.white
         resultIndicator.hidesWhenStopped = false
         resultIndicator.translatesAutoresizingMaskIntoConstraints = false
         addSubview(resultIndicator)
