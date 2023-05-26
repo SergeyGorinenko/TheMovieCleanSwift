@@ -16,7 +16,6 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/airbnb/lottie-ios.git", exact: "3.4.3")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -24,10 +23,6 @@ let package = Package(
         .target(
             name: "Basement",
             dependencies: [
-                .product(name: "Lottie", package: "lottie-ios")
-            ],
-            resources: [
-                .process("Resources/JSONs/loader.json"),
             ]),
         .testTarget(
             name: "BasementTests",

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Lottie
 
 // MARK: - LoadingViewControllerProtocol
 
@@ -36,16 +35,11 @@ open class LoadingViewController: UIViewController {
         return _dimmingView!
     }
 
-    private var _animationView: AnimationView?
-    private var animationView: AnimationView {
+    private var _animationView: UIActivityIndicatorView?
+    private var animationView: UIActivityIndicatorView {
         if _animationView == nil {
-            let bundle = Bundle.module
-            let filePath = bundle.path(forResource: "loader", ofType: "json")
-            let animationView = AnimationView(filePath: filePath!)
-            animationView.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-            animationView.contentMode = .scaleAspectFit
-            animationView.loopMode = .loop
-            animationView.animationSpeed = 1
+            let animationView = UIActivityIndicatorView(style: .medium)
+            animationView.color = .white
             _animationView = animationView
         }
         return _animationView!
@@ -83,14 +77,14 @@ extension LoadingViewController: LoadingViewControllerProtocol {
             view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[dimmingView]-0-|", options: [], metrics: nil, views: ["dimmingView": dimmingView]))
 
             view.bringSubviewToFront(dimmingView)
-            animationView.play()
+            animationView.startAnimating()
         }
     }
     
     public func hideLoading() {
         assert(Thread.isMainThread, "Must be run from the main thread")
         if isLoadingShown {
-            animationView.stop()
+            animationView.stopAnimating()
             animationView.removeFromSuperview()
             dimmingView.removeFromSuperview()
             _animationView = nil

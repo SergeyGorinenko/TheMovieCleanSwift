@@ -6,11 +6,15 @@
 //
 
 import Combine
+import UIKit
 import Basement
+import TheMovieAPI
 
 // MARK: - View Protocol
 
 protocol MovieListViewProtocol: LoadingViewControllerProtocol {
+    var collectionView: UICollectionView { get }
+    func reloadData()
 }
 
 
@@ -24,12 +28,21 @@ protocol MovieListViewDelegate {
 // MARK: - Interactor Protocol
 
 protocol MovieListInteractorProtocol {
-    func loadFirstPage(completion: @escaping ((Result<Bool, Error>) -> Void))
-    func loadNextPage(completion: @escaping ((Result<Bool, Error>) -> Void))
+    var movies: [Movie] { get }
+    func loadFirstPage() async -> Result<[Movie], Error>
+    func loadNextPage() async -> Result<[Movie], Error>
 }
 
 
 // MARK: - Router Protocol
 
 protocol MovieListRouterProtocol: ViperRouterProtocol {
+}
+
+
+// MARK: - MovieListCellProtocol
+
+protocol MovieListCellProtocol: ImageLoadingCellProtocol {
+    var clickBlock: ((UInt) -> Void)? { get set }
+    func update(with movie: Movie, loader: ImageLoaderProtocol)
 }
